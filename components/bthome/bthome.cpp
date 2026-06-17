@@ -739,12 +739,6 @@ void BTHome::nimble_on_reset_(int reason) {
 }
 #endif
 
-#if defined(USE_ESP32) && defined(USE_BTHOME_BLUEDROID)
-void BTHome::gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param_t *param) {
-  // GAP events are handled by ESPHome's BLE component
-  // We start advertising directly in start_advertising_()
-}
-#endif
 
 #ifdef USE_SENSOR
 size_t BTHome::encode_measurement_(uint8_t *data, size_t max_len, const SensorMeasurement &measurement) {
